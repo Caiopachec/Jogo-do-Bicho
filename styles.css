@@ -1,0 +1,151 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    width: 100%;
+    background-color: var(--header-background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+nav {
+    display: flex;
+    width: 10%;
+    padding: 1%;
+    
+}
+
+
+nav ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+#themeToggle {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#themeToggle:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--container-background-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.534);
+    width: 650px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 9px;
+}
+
+input, select, button {
+    padding: 7px;
+    margin-top: 3px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 96%;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+}
+
+button {
+    background-color: #0569ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+button:hover {
+    background-color: #215688;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#betHistory {
+    margin-top: 20px;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+}
+
+#historyList li {
+    background-color: #fc06063d;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #000;
+    --header-background-color: #ffffff;
+    --link-hover-color: #007bff;
+    --button-background-color: #007bff;
+    --button-text-color: #fff;
+    --button-hover-background-color: #0070e7;
+    --container-background-color: #fff;
+    --input-background-color: #ffffff;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background-color: #333;
+    --link-hover-color: #66b2ff;
+    --button-background-color: #007bff;
+    --button-text-color: #fff;
+    --button-hover-background-color: #215688;
+    --container-background-color: #333;
+    --input-background-color: #444;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
