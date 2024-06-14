@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="login.css" rel="stylesheet">
+    <title>login</title>
+</head>
+<body class="custom-body">
+    <main class="w-100 m-auto form-container">
+        <form id="login-form">
+            <img src="https://pioneerinvestments.ro/wp-content/uploads/2024/02/1-1.webp" class="m-4" height="150" width="400"/>
+            <h1 class="h3 mb-5 fw-normal">Login!</h1>  
+            
+            <input type="text" id="login" placeholder="email">
+            <input type="password" id="senha" placeholder="senha">
+            <input type="submit" value="Login">
+        </form>
+
+        <p><a href="/cadastro">cria uma conta</a></p>
+        <script>
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio do formulário padrão
+                
+                var login = document.getElementById('login').value;
+                var senha = document.getElementById('senha').value;
+        
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: login, senha: senha })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Sucesso');
+                        location.href = "/jogo-do-bicho";
+                    } else {
+                        alert('Usuario ou senha incorreta');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+            });
+        </script>
+    </main>      
+</body>
+</html>
